@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-image: url("/public/bg.jpg");
+  }
+  
+  .App {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  }
+  
+  .App .mainHeading h1 {
+    text-align: center;
+  }
+  
+  .App h1,
+  h2,h3 {
+    color: white;
+  }
+  
+  .h3{
+    padding: 5px;
+    color: rgb(27, 197, 27);
+    font-size: 30px;
+  }
+
+  .App .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .App .input {
+    margin-top: 0.8em;
+    width: 20em;
+    height: 2em;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    padding: 5px;
+  }
+  
+  .App .input input {
+    width: 100%;
+    height: 1.6em;
+    border-color: transparent;
+    outline-color: transparent;
+  }
+  
+  .App i {
+    cursor: pointer;
+    font-size: larger;
+    font-weight: 900;
+    color: grey;
+    margin-right: 5px;
+  }
+  .App .todos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .App .todos .todo {
+    margin-top: 0.8em;
+    width: 20em;
+    height: 2em;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    padding: 5px;
+  }
+  .App .todos .todo .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .App .todos .todo .left p {
+    margin-left: 3px;
+    font-size: medium;
+    font-weight: 700;
+    font-style: normal;
+    color: grey;
+  }
+
+
+  /*checkbox */
+
+  .left input[type="checkbox"] {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .left input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #048606;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .left input[type="checkbox"]:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
