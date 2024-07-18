@@ -5,7 +5,8 @@
   }
   
   body {
-    background-image: url("/public/bg.jpg");
+    background-color: #ebe4e4;
+    
   }
   
   .App {
@@ -19,8 +20,10 @@
     text-align: center;
   }
   
-  .App h1,
-  h2,h3 {
+  .App h1{
+    color: #103a6c ;
+  }
+  .App h2,h3 {
     color: white;
   }
   
@@ -29,6 +32,32 @@
     color: rgb(27, 197, 27);
     font-size: 30px;
   }
+
+  /* NEW UPDATIONS */
+  .section{
+    background-color: #103a6c;
+    padding: 5px;
+    border-radius: 6px;
+
+  }
+
+  .complete{
+    text-decoration: line-through;
+    color: #0c961a;
+  }
+  
+ .btn{
+    padding: 5px;
+    margin-left: 30px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+ }
+ 
+
 
   .App .input {
     display: flex;
@@ -86,11 +115,11 @@
   }
   
   .App .todos .todo .left p {
-    margin-left: 3px;
+    margin-left: 10px;
     font-size: medium;
-    font-weight: 700;
+    font-weight: 800;
     font-style: normal;
-    color: grey;
+    color: #103a6c;
   }
 
 
