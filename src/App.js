@@ -1,5 +1,8 @@
+import { Search } from "lucide-react";
+import { Button } from "./components/ui/button";
 import "./style/index.css";
 import { useState } from "react";
+import { Input } from "./components/ui/input";
 
 function App() {
   const [toDos, setTodos] = useState([]);
@@ -13,7 +16,7 @@ function App() {
 
   const toggleMode = () => {
     setIsSearchMode(!isSearchMode);
-    setTodo(''); // Clear input field when toggling mode
+    setTodo(''); 
   };
 
   const handleSearch = () => {
@@ -55,25 +58,26 @@ function App() {
   return (
     <div className="App">
       <div className="mainHeading">
-        <h1>ToDo List</h1>
+        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">ToDo List</h1>
       </div>
-      <div className="input">
-        <input
+      <br/><br/>
+      <div className="flex w-full max-w-sm items-center space-x-2">
+        <Input
           onChange={(e) => setTodo(e.target.value)}
           onKeyDown={handleKeyDown}
           value={toDo}
           type="text"
           placeholder={isSearchMode ? "Search todos" : "Add items"}
         />
-        <i onClick={isSearchMode ? handleSearch : handleAddTodo} className="fas fa-plus"></i>
+        <Button onClick={isSearchMode ? handleSearch : handleAddTodo} className="fas fa-plus"></Button>
       </div><br /><br />
-      <div className="section">
-        <i onClick={toggleMode} className="fa-solid fa-magnifying-glass"></i>
-        <button className="btn" onClick={() => handleFilterChange('all')}>ALL</button>
-        <button className="btn" onClick={() => handleFilterChange('active')}>ACTIVE</button>
-        <button className="btn" onClick={() => handleFilterChange('completed')}>COMPLETED</button>
+      <div className="flex flex-rows-4 grid-flow-col ">
+        <Button variant='outline' onClick={toggleMode}><Search /></Button>
+        <Button className="btn" onClick={() => handleFilterChange('all')}>ALL</Button>
+        <Button className="btn" onClick={() => handleFilterChange('active')}>ACTIVE</Button>
+        <Button className="btn" onClick={() => handleFilterChange('completed')}>COMPLETED</Button>
       </div>
-
+        <br/>
       <div className="todos">
         {filteredTodos.map((obj) => (
           <div className="todo" key={obj.id}>
